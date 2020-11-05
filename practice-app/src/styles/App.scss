@@ -1,0 +1,13 @@
+.app {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+/////////////////////////////////////////////////////////////////////////
+// Here, I will import my partials
+@import "setup";
+@import "variables";
+@import "main";
+
+
