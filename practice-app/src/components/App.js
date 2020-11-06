@@ -14,8 +14,7 @@ class App extends Component {
   render() {
     return (
       <Router>
-          <div className="app">
-          <h1>Welcome Page</h1>
+          <div className="app wrapper">
           <Login />
           <Link to="/signup">Sign up</Link>
           {/* <Route path="/login"  component={Login} /> */}

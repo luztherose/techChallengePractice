@@ -8,7 +8,7 @@ class SignUp extends Component {
                 <form>
                     <div>
                         <label>Email </label>
-                        <input type="email "></input>
+                        <input type="email"></input>
                         <label>Password </label>
                         <input type="password"></input>
                     </div>

@@ -1,3 +1,38 @@
-h1 {
-    color: $mainColor;
+html {
+    font-size: 125%;
+}
+.wrapper {
+    max-width: 1200px;
+    width: 100%;
+    margin: 6rem auto 0 auto;
+    background: $backgroundColor;
+}
+body {
+    background: $bodyColor;
+    color: $primaryColor;
+}
+.loginContainer {
+    padding: 50px;
+    
+}
+form {
+    width: 50%;
+    margin: 0 auto;
+    border: 1px solid rgba(10, 10, 10, 0.25);
+    padding: 10px;
+}
+label {
+    display: block;
+    margin: 0;
+    font-weight: bolder;
+}
+input[type="submit"] {
+    display: block;
+    margin: 1rem auto 1rem auto;
+}
+input[type=email], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
 }
