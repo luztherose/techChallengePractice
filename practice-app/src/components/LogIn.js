@@ -3,7 +3,7 @@ import Users from "./Users"
 class Longin extends Component {
     render() {
         return (
-            <div className="loginContainer">
+            <div className="formContainer">
                 <h1>Sign In</h1>
                 <form >
                     <label>Email Address </label>
