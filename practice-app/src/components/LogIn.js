@@ -1,5 +1,11 @@
 import React, { Component } from "react";
-import Users from "./Users"
+import Users from "./Users";
+import {
+    BrowserRouter as Router,
+    Route,
+    Link
+} from "react-router-dom";
+
 class Longin extends Component {
     render() {
         return (
@@ -7,11 +13,17 @@ class Longin extends Component {
                 <h1>Sign In</h1>
                 <form >
                     <label>Email Address </label>
-                    <input type="email"></input>
+                    <input type="email" placeholder="johnsmith@gmail.com"></input>
                     <label>Password </label>
                     <input type="password"></input>
                     <input type="submit" value="Sign In!"></input>
                 </form>
+                <div>
+                    <p>Please Sign Up!</p>
+                    <ul>
+                        <li><Link to="/signup">Sign up</Link></li>
+                    </ul>
+                </div>
             </div>
         );
     }

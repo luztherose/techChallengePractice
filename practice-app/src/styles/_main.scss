@@ -42,3 +42,6 @@ input[type=email], input[type=password] {
     margin: 8px 0;
     box-sizing: border-box;
 }
+::placeholder {
+    font-size: 14px;
+}

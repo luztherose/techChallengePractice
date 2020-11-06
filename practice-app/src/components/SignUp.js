@@ -4,7 +4,7 @@ class SignUp extends Component {
     render() {
         return(
             <div className="formContainer">
-                <h1>Sign Up Page</h1>
+                <h1>Sign Up</h1>
                 <form>
                     <div>
                         <label>Email </label>

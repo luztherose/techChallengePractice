@@ -2,8 +2,7 @@ import React, { Component } from "react";
 import {
   BrowserRouter as Router,
   Route, Link
-}
-  from 'react-router-dom';
+}from 'react-router-dom';
 import LogIn from "./LogIn";
 import '../styles/App.scss';
 import Login from "./LogIn";
@@ -16,15 +15,8 @@ class App extends Component {
     return (
       <Router>
         <div className="app wrapper">
-        {/* <h1>Sign In to Continue...</h1> */}
-          {/* <Login />
-          <SignUp /> */}
-          
-          <Route exact path="/"  component={ Login } />
-          {/* <Link to="/signup">Sign up</Link> */}
-          <Route path="/signup" component={ SignUp } />
-          {/* <Route path="/users"  component={Users} />
-          <Route path="/logout" component={LogOut} /> */}
+          <Route exact path="/" component={Login} />
+          <Route path="/signup" component={SignUp} />
         </div>
       </Router>
     );

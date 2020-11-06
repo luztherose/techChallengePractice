@@ -317,4 +317,20 @@ input[type=email], input[type=password] {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
+
+::-webkit-input-placeholder {
+  font-size: 14px;
+}
+
+:-ms-input-placeholder {
+  font-size: 14px;
+}
+
+::-ms-input-placeholder {
+  font-size: 14px;
+}
+
+::placeholder {
+  font-size: 14px;
+}
 /*# sourceMappingURL=App.css.map */
