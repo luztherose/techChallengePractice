@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/luztherose/techChallengePractice/static/css/main.3b8c436c.chunk.css",
-    "main.js": "/luztherose/techChallengePractice/static/js/main.6ce0805a.chunk.js",
-    "main.js.map": "/luztherose/techChallengePractice/static/js/main.6ce0805a.chunk.js.map",
-    "runtime-main.js": "/luztherose/techChallengePractice/static/js/runtime-main.e3236bbb.js",
-    "runtime-main.js.map": "/luztherose/techChallengePractice/static/js/runtime-main.e3236bbb.js.map",
-    "static/js/2.88fed0b5.chunk.js": "/luztherose/techChallengePractice/static/js/2.88fed0b5.chunk.js",
-    "static/js/2.88fed0b5.chunk.js.map": "/luztherose/techChallengePractice/static/js/2.88fed0b5.chunk.js.map",
-    "static/js/3.25597510.chunk.js": "/luztherose/techChallengePractice/static/js/3.25597510.chunk.js",
-    "static/js/3.25597510.chunk.js.map": "/luztherose/techChallengePractice/static/js/3.25597510.chunk.js.map",
-    "index.html": "/luztherose/techChallengePractice/index.html",
-    "static/css/main.3b8c436c.chunk.css.map": "/luztherose/techChallengePractice/static/css/main.3b8c436c.chunk.css.map",
-    "static/js/2.88fed0b5.chunk.js.LICENSE.txt": "/luztherose/techChallengePractice/static/js/2.88fed0b5.chunk.js.LICENSE.txt"
+    "main.css": "/techChallengePractice/static/css/main.3b8c436c.chunk.css",
+    "main.js": "/techChallengePractice/static/js/main.6ce0805a.chunk.js",
+    "main.js.map": "/techChallengePractice/static/js/main.6ce0805a.chunk.js.map",
+    "runtime-main.js": "/techChallengePractice/static/js/runtime-main.c1088be4.js",
+    "runtime-main.js.map": "/techChallengePractice/static/js/runtime-main.c1088be4.js.map",
+    "static/js/2.88fed0b5.chunk.js": "/techChallengePractice/static/js/2.88fed0b5.chunk.js",
+    "static/js/2.88fed0b5.chunk.js.map": "/techChallengePractice/static/js/2.88fed0b5.chunk.js.map",
+    "static/js/3.25597510.chunk.js": "/techChallengePractice/static/js/3.25597510.chunk.js",
+    "static/js/3.25597510.chunk.js.map": "/techChallengePractice/static/js/3.25597510.chunk.js.map",
+    "index.html": "/techChallengePractice/index.html",
+    "static/css/main.3b8c436c.chunk.css.map": "/techChallengePractice/static/css/main.3b8c436c.chunk.css.map",
+    "static/js/2.88fed0b5.chunk.js.LICENSE.txt": "/techChallengePractice/static/js/2.88fed0b5.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.e3236bbb.js",
+    "static/js/runtime-main.c1088be4.js",
     "static/js/2.88fed0b5.chunk.js",
     "static/css/main.3b8c436c.chunk.css",
     "static/js/main.6ce0805a.chunk.js"
