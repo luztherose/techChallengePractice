@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/techChallengePractice/static/css/main.9d285003.chunk.css",
-    "main.js": "/techChallengePractice/static/js/main.4a85d70e.chunk.js",
-    "main.js.map": "/techChallengePractice/static/js/main.4a85d70e.chunk.js.map",
+    "main.js": "/techChallengePractice/static/js/main.e646d8c2.chunk.js",
+    "main.js.map": "/techChallengePractice/static/js/main.e646d8c2.chunk.js.map",
     "runtime-main.js": "/techChallengePractice/static/js/runtime-main.1acf01db.js",
     "runtime-main.js.map": "/techChallengePractice/static/js/runtime-main.1acf01db.js.map",
     "static/js/2.5c0499b9.chunk.js": "/techChallengePractice/static/js/2.5c0499b9.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.1acf01db.js",
     "static/js/2.5c0499b9.chunk.js",
     "static/css/main.9d285003.chunk.css",
-    "static/js/main.4a85d70e.chunk.js"
+    "static/js/main.e646d8c2.chunk.js"
   ]
 }
