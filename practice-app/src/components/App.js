@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import {
-  BrowserRouter as Router,
+  HashRouter,
   Route
 }from 'react-router-dom';
 import '../styles/App.scss';
@@ -11,12 +11,12 @@ import SignUp from "./SignUp"
 class App extends Component {
   render() {
     return (
-      <Router>
+      <HashRouter basename="/">
         <div className="app wrapper">
           <Route exact path="/" component={LogIn} />
           <Route path="/signup" component={SignUp} />
         </div>
-      </Router>
+      </HashRouter>
     );
   }
 }

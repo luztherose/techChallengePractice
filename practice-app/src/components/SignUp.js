@@ -3,19 +3,29 @@ import axios from 'axios';
 
 class SignUp extends Component {
     state = {
-        username: '',
+        userName: '',
         password: ''
+    }
+
+    handleChange = event => {
+        this.setState(
+            { 
+                userName: event.target.value, 
+                userPassword:event.target.value
+            
+            });
     }
 
     handleSubmit = event => {
         event.preventDefault();
-        console.log("working!")
-        // const user = {
-        //     username: this.state.name,
-        //     password: this.state.name
-        // };
-
-        // axios.post(`http:///api/v1/auth/register`, { user })
+        //console.log("working!")
+        
+        const user = {
+            userName: this.state.userName,
+            password: this.state.userPassword
+        };
+        console.log(user)
+        // axios.post(`http://api/v1/auth/register`, { user })
         // .then(res => {
         // console.log(res);
         // console.log(res.data);
@@ -29,9 +39,9 @@ class SignUp extends Component {
                 <form method="post" action="/register">
                     <div>
                         <label>Email </label>
-                        <input type="email" name="username"></input>
+                        <input type="email" name="username" onChange={this.handleChange}></input>
                         <label>Password </label>
-                        <input type="password" name="password"></input>
+                        <input type="password" name="password" onChange={this.handleChange}></input>
                     </div>
                     <div>
                         <input type="submit" value="Register" onClick={this.handleSubmit} ></input>
