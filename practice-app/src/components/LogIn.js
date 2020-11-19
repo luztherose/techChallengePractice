@@ -6,11 +6,11 @@ class Longin extends Component {
         return (
             <div className="formContainer">
                 <h1>Sign In</h1>
-                <form >
+                <form method="post" action="/login">
                     <label>Email Address </label>
-                    <input type="email" placeholder="johnsmith@gmail.com"></input>
+                    <input type="email"name="userEmail" placeholder="johnsmith@gmail.com"></input>
                     <label>Password </label>
-                    <input type="password"></input>
+                    <input type="password" name="password"></input>
                     <input type="submit" value="Sign In!"></input>
                 </form>
                 <div>
