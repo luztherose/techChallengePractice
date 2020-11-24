@@ -1,20 +1,20 @@
 {
   "files": {
     "main.css": "/luztherose/techChallengePractice/static/css/main.9d285003.chunk.css",
-    "main.js": "/luztherose/techChallengePractice/static/js/main.74cd80f3.chunk.js",
-    "main.js.map": "/luztherose/techChallengePractice/static/js/main.74cd80f3.chunk.js.map",
+    "main.js": "/luztherose/techChallengePractice/static/js/main.98f1fd7f.chunk.js",
+    "main.js.map": "/luztherose/techChallengePractice/static/js/main.98f1fd7f.chunk.js.map",
     "runtime-main.js": "/luztherose/techChallengePractice/static/js/runtime-main.c6b5150a.js",
     "runtime-main.js.map": "/luztherose/techChallengePractice/static/js/runtime-main.c6b5150a.js.map",
-    "static/js/2.5aabd489.chunk.js": "/luztherose/techChallengePractice/static/js/2.5aabd489.chunk.js",
-    "static/js/2.5aabd489.chunk.js.map": "/luztherose/techChallengePractice/static/js/2.5aabd489.chunk.js.map",
+    "static/js/2.53485d6f.chunk.js": "/luztherose/techChallengePractice/static/js/2.53485d6f.chunk.js",
+    "static/js/2.53485d6f.chunk.js.map": "/luztherose/techChallengePractice/static/js/2.53485d6f.chunk.js.map",
     "index.html": "/luztherose/techChallengePractice/index.html",
     "static/css/main.9d285003.chunk.css.map": "/luztherose/techChallengePractice/static/css/main.9d285003.chunk.css.map",
-    "static/js/2.5aabd489.chunk.js.LICENSE.txt": "/luztherose/techChallengePractice/static/js/2.5aabd489.chunk.js.LICENSE.txt"
+    "static/js/2.53485d6f.chunk.js.LICENSE.txt": "/luztherose/techChallengePractice/static/js/2.53485d6f.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.c6b5150a.js",
-    "static/js/2.5aabd489.chunk.js",
+    "static/js/2.53485d6f.chunk.js",
     "static/css/main.9d285003.chunk.css",
-    "static/js/main.74cd80f3.chunk.js"
+    "static/js/main.98f1fd7f.chunk.js"
   ]
 }
