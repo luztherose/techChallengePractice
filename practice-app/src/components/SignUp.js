@@ -1,35 +1,37 @@
 import React, {Component} from "react";
 import axios from 'axios';
+import { createHashHistory } from "history"
 
 class SignUp extends Component {
     state = {
-        userName: '',
+        username: '',
         password: ''
     }
 
     handleChange = event => {
-        this.setState(
-            { 
-                userName: event.target.value, 
-                userPassword:event.target.value
-            
-            });
+
+        const user = this.state
+        if(event.target.name == "username"){
+            user.username = event.target.value
+        } else if(event.target.name == "password"){
+            user.password = event.target.value
+        }
+        this.setState(user);
     }
 
     handleSubmit = event => {
         event.preventDefault();
-        //console.log("working!")
-        
-        const user = {
-            userName: this.state.userName,
-            password: this.state.userPassword
-        };
-        console.log(user)
-        // axios.post(`http://api/v1/auth/register`, { user })
-        // .then(res => {
-        // console.log(res);
-        // console.log(res.data);
-        // })
+        const user = this.state;
+        axios.post(`http://51.38.51.187:3333/api/v1/auth/register`, user )
+        .then(res => {
+        // handle success
+        alert("Sign up successful!");
+        const history = createHashHistory()
+        history.push("/")  
+        }).catch(function (error) {
+            alert(error.response.data.message);
+            console.error(error);
+        });
     }
 
     render() {
