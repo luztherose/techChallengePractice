@@ -45,3 +45,13 @@ input[type=email], input[type=password] {
 ::placeholder {
     font-size: 14px;
 }
+
+.userContainer {
+    display: flex;
+    justify-content: space-around;
+    border: 2px solid black;
+
+    p {
+        border-bottom: 1px solid black;
+    }
+}
