@@ -1,12 +1,11 @@
 import axios from "axios";
 import React, { Component } from "react";
 import {Link} from "react-router-dom";
-import { createHashHistory } from "history"
 
 class Longin extends Component {
     state = {
         username: '',
-        password: ''
+        password: '' 
     }
 
     handleChange = (event) => {
@@ -26,8 +25,7 @@ class Longin extends Component {
 
         axios.post(`http://51.38.51.187:3333/api/v1/auth/login`, this.state).then(res => {
             localStorage.setItem('token', res.data.accessToken);
-            const history = createHashHistory()
-            history.push("/users")
+            this.props.history.push("/users");
         }).catch(error => {
             alert(error.response.data.message);
             console.log(error);
@@ -36,8 +34,7 @@ class Longin extends Component {
 
     render() {
         if(localStorage.getItem('token') !== null) {
-            const history = createHashHistory()
-            history.push("/users")
+            this.props.history.push("/users");
         }
 
         return (

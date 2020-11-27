@@ -24,10 +24,15 @@ class Users extends Component {
         });
     }
     componentDidMount(){
-        this.fetchUsers();
+        if (localStorage.getItem('token') === null) {
+            this.props.history.push("/");
+        } else {
+            this.fetchUsers();
+        }
     }
 
     render() {
+        
         return (
             <div>
                 <h1> Users Page</h1>

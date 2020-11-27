@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import axios from 'axios';
-import { createHashHistory } from "history"
+
 
 class SignUp extends Component {
     state = {
@@ -11,9 +11,9 @@ class SignUp extends Component {
     handleChange = event => {
 
         const user = this.state
-        if(event.target.name == "username"){
+        if(event.target.name === "username"){
             user.username = event.target.value
-        } else if(event.target.name == "password"){
+        } else if(event.target.name === "password"){
             user.password = event.target.value
         }
         this.setState(user);
@@ -26,8 +26,7 @@ class SignUp extends Component {
         .then(res => {
         // handle success
         alert("Sign up successful!");
-        const history = createHashHistory()
-        history.push("/")  
+        this.props.history.push("/")  
         }).catch(function (error) {
             alert(error.response.data.message);
             console.error(error);
