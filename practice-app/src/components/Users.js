@@ -1,5 +1,7 @@
 import axios from "axios";
 import React, { Component } from "react";
+import { isUserLogged, getAuthToken } from "./Context/authContext";
+
 // This component will be available only for the users that are loged in
 // This should include a list of all users
 class Users extends Component {
@@ -9,7 +11,7 @@ class Users extends Component {
     }
     
     async fetchUsers()  {
-        const token = localStorage.getItem("token");
+        const token = getAuthToken();
         const config = {
             headers: {
                 "Authorization": `Bearer ${token}` 
@@ -24,7 +26,7 @@ class Users extends Component {
         });
     }
     componentDidMount(){
-        if (localStorage.getItem('token') === null) {
+        if (!isUserLogged()) {
             this.props.history.push("/");
         } else {
             this.fetchUsers();

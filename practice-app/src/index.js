@@ -3,12 +3,20 @@ import ReactDOM from 'react-dom';
 import './styles/index.css';
 import App from './components/App';
 import { BrowserRouter } from 'react-router-dom';
+import { AuthProvider, getAuthToken, isUserLogged } from "./components/Context/authContext";
 
+
+const userLogged = {
+    getToken: () => getAuthToken(),
+    isUserLogged: () => isUserLogged()
+}
 
 ReactDOM.render(
-    <BrowserRouter basename="/techChallengePractice">
-        <App />
-    </BrowserRouter>
+    <AuthProvider value={ userLogged }>
+        <BrowserRouter basename="/techChallengePractice">
+            <App />
+        </BrowserRouter>
+    </AuthProvider>
     , document.getElementById('root')
 );
 

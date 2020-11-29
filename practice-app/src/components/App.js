@@ -6,7 +6,7 @@ import {
 import '../styles/App.scss';
 import LogIn from "./LogIn";
 import SignUp from "./SignUp";
-import Users from "./Users"
+import Users from "./Users";
 
 
 class App extends Component {
