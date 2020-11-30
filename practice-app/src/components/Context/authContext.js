@@ -10,4 +10,6 @@ export const getAuthToken = () => localStorage.getItem('token');
 
 export const setAuthToken = (token) => localStorage.setItem('token', token);
 
-export const isUserLogged = () => getAuthToken() !== null
+export const logout = () => localStorage.removeItem('token');
+
+export const isUserLogged = () => getAuthToken() !== null;

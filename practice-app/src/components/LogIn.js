@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { AuthConsumer, setAuthToken } from "./Context/authContext"
+import { isUserLogged, setAuthToken, getAuthToken, logout } from "./Context/authContext";
 
 class Longin extends Component {
     state = {
@@ -34,35 +34,39 @@ class Longin extends Component {
     }
 
     render() {
+        // return (
+        //     <AuthConsumer>
+        //         {
+        //             auth => {
+        // console.log(logout())
+        // console.log(typeof(getAuthToken()) )
+        // console.log(getAuthToken() !== null)
+        // debugger
+        if (isUserLogged()) {
+            this.props.history.push("/users");
+        }
+        // }
+        // }
         return (
-            <AuthConsumer>
-                {
-                    auth => {
-                        if (auth.isUserLogged()) {
-                            this.props.history.push("/users");
-                        }
-                    }
-                }
-            return (
-                <div className="formContainer">
-                    <h1>Sign In</h1>
-                    <form method="post" action="/login">
-                        <label>Email Address </label>
-                        <input type="email" name="userEmail" placeholder="johnsmith@gmail.com" onChange={this.handleChange}></input>
-                        <label>Password </label>
-                        <input type="password" name="password" onChange={this.handleChange}></input>
-                        <input type="submit" value="Sign In!" onClick={this.handleSubmit}></input>
-                    </form>
-                    <div>
-                        <p>Please Sign Up!</p>
-                        <ul>
-                            <li><Link to="/signup">Sign up</Link></li>
-                        </ul>
-                    </div>
+            <div className="formContainer">
+                <h1>Sign In</h1>
+                <form method="post" action="/login">
+                    <label>Email Address </label>
+                    <input type="email" name="userEmail" placeholder="johnsmith@gmail.com" onChange={this.handleChange}></input>
+                    <label>Password </label>
+                    <input type="password" name="password" onChange={this.handleChange}></input>
+                    <input type="submit" value="Sign In!" onClick={this.handleSubmit}></input>
+                </form>
+                <div>
+                    <p>Please Sign Up!</p>
+                    <ul>
+                        <li><Link to="/signup">Sign up</Link></li>
+                    </ul>
                 </div>
-            );
-            </AuthConsumer>
-        )
+            </div>
+        );
+        {/* </AuthConsumer>
+        ) */}
     }
 }
 export default Longin; 

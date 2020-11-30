@@ -7,6 +7,7 @@ import '../styles/App.scss';
 import LogIn from "./LogIn";
 import SignUp from "./SignUp";
 import Users from "./Users";
+import Logout from "./LogOut"
 
 
 class App extends Component {
@@ -17,6 +18,7 @@ class App extends Component {
           <Route exact path="/" component={LogIn} />
           <Route path="/signup" component={SignUp} />
           <Route path="/users" component={Users} />
+          <Route path="/logout" component={Logout} />
         </Switch>
       </main>
     );

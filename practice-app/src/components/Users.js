@@ -1,5 +1,7 @@
 import axios from "axios";
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import Logout from "./LogOut";
 import { isUserLogged, getAuthToken } from "./Context/authContext";
 
 // This component will be available only for the users that are loged in
@@ -7,25 +9,25 @@ import { isUserLogged, getAuthToken } from "./Context/authContext";
 class Users extends Component {
 
     state = {
-        "users": [ ]
+        "users": []
     }
-    
-    async fetchUsers()  {
+
+    async fetchUsers() {
         const token = getAuthToken();
         const config = {
             headers: {
-                "Authorization": `Bearer ${token}` 
+                "Authorization": `Bearer ${token}`
             }
         }
         axios.get('http://51.38.51.187:3333/api/v1/users',
-        config
+            config
         ).then(res => {
-            this.setState({"users": res.data })
+            this.setState({ "users": res.data })
         }).catch(error => {
             console.log(error)
         });
     }
-    componentDidMount(){
+    componentDidMount() {
         if (!isUserLogged()) {
             this.props.history.push("/");
         } else {
@@ -37,29 +39,36 @@ class Users extends Component {
         
         return (
             <div>
-                <h1> Users Page</h1>
-                <p>List of Users</p>
-                <div className="userContainer">
-                    <div>
-                        <p>Ids</p>
-                    </div>
-                    <div>
-                        <p>users</p>
-                    </div>
+                <div>
+                    <ul>
+                        <li><Link to="/logout">Log out</Link></li>
+                    </ul>
                 </div>
-                { this.state.users.map(item => {
-                    return (
-                        <div className="userContainer" key={item._id}>
-                            <div>
-                                <p>{item._id}</p>
-                            </div>
-                            <div>
-                                <p>{item.username}</p>
-                            </div>
+                <div>
+                    <h1> Users Page</h1>
+                    <p>List of Users</p>
+                    <div className="userContainer">
+                        <div>
+                            <p>Ids</p>
                         </div>
-                    )
-                })
-                }
+                        <div>
+                            <p>users</p>
+                        </div>
+                    </div>
+                    {this.state.users.map(item => {
+                        return (
+                            <div className="userContainer" key={item._id}>
+                                <div>
+                                    <p>{item._id}</p>
+                                </div>
+                                <div>
+                                    <p>{item.username}</p>
+                                </div>
+                            </div>
+                        )
+                    })
+                    }
+                </div>
             </div>
         );
     }
