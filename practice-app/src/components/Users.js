@@ -35,8 +35,32 @@ class Users extends Component {
         }
     }
 
+    handleConfirmDelete = (id) => {
+        if (window.confirm("Are you should you want to delete this entry?")) {
+            this.handleDelete(id)
+        }
+    }
+
+    handleDelete = (id) => {
+        const token = getAuthToken();
+        const config = {
+            headers: {
+                "Authorization": `Bearer ${token}`
+            }
+        }
+        axios.delete(`http://51.38.51.187:3333/api/v1/users/${id}`,
+            config
+        ).then(res => {
+            const newUsers = this.state.users.filter((user) => user._id != id)
+            this.setState({ "users": newUsers });
+            alert("This entry has been deleted");
+            console.log(res);
+        }).catch(error => {
+            console.log(error)
+        });
+    }
+
     render() {
-        
         return (
             <div>
                 <div>
@@ -63,6 +87,10 @@ class Users extends Component {
                                 </div>
                                 <div>
                                     <p>{item.username}</p>
+                                </div>
+                                <div>
+                                    <button onClick={ () => this.handleConfirmDelete(item._id)
+                                    }>X</button>
                                 </div>
                             </div>
                         )
