@@ -1,28 +1,15 @@
 html {
     font-size: 125%;
 }
-.wrapper {
-    max-width: 1200px;
-    width: 100%;
-    margin: 6rem auto 0 auto;
-    background: $backgroundColor;
-}
+
 body {
     background: $bodyColor;
     color: $primaryColor;
 }
-// .callouts {
-//     display: flex;
-//     justify-content: space-around;
-//     align-items: center;
-//     padding: 40px;
-// }
 .formContainer {
     padding: 50px;
-    
 }
 form {
-    width: 50%;
     margin: 0 auto;
     border: 1px solid rgba(10, 10, 10, 0.25);
     padding: 10px;
@@ -54,4 +41,24 @@ input[type=email], input[type=password] {
     p {
         border-bottom: 1px solid black;
     }
+}
+.linkToLogout {
+    text-align: end;
+    padding: 10px;
+}
+.centerElements {
+    margin: 0 auto;
+}
+.alignLeft {
+    text-align: left;
+}
+.marginLeft {
+    margin-left:-1.7em ;
+}
+/////////////////////////////////////////////////////////////////////
+// Boostrap Classes
+/////////////////////////////////////////////////////////////////////
+.row {
+    text-align: center;
+    padding-bottom: 0.5em;
 }

@@ -4,6 +4,7 @@ import './styles/index.css';
 import App from './components/App';
 import { BrowserRouter } from 'react-router-dom';
 import { AuthProvider, getAuthToken, isUserLogged } from "./components/Context/authContext";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 const userLogged = {

@@ -63,40 +63,41 @@ class Users extends Component {
     render() {
         return (
             <div>
-                <div>
+                <div className="linkToLogout">
                     <ul>
                         <li><Link to="/logout">Log out</Link></li>
                     </ul>
                 </div>
-                <div>
-                    <h1> Users Page</h1>
-                    <p>List of Users</p>
-                    <div className="userContainer">
-                        <div>
-                            <p>Ids</p>
+                <div class="container">
+                    <div class="row">
+                        <h1 className="centerElements">List of Users</h1>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm alignLeft ">
+                            <h2>Ids</h2>
                         </div>
-                        <div>
-                            <p>users</p>
+                        <div class="col-sm alignLeft">
+                            <h2 className="marginLeft">Emails</h2>
                         </div>
                     </div>
-                    {this.state.users.map(item => {
-                        return (
-                            <div className="userContainer" key={item._id}>
-                                <div>
-                                    <p>{item._id}</p>
-                                </div>
-                                <div>
-                                    <p>{item.username}</p>
-                                </div>
-                                <div>
-                                    <button onClick={ () => this.handleConfirmDelete(item._id)
-                                    }>X</button>
-                                </div>
-                            </div>
-                        )
-                    })
-                    }
                 </div>
+                {this.state.users.map(item => {
+                    return (
+                        <div className="row" key={item._id}>
+                            <div class="col-sm">
+                                <p>{item._id}</p>
+                            </div>
+                            <div class="col-sm">
+                                <p>{item.username}</p>
+                            </div>
+                            <div class="col-sm">
+                                <button onClick={() => this.handleConfirmDelete(item._id)
+                                }>X</button>
+                            </div>
+                        </div>
+                    )
+                })
+                }
             </div>
         );
     }

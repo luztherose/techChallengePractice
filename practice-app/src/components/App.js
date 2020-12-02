@@ -13,7 +13,7 @@ import Logout from "./LogOut"
 class App extends Component {
   render() {
     return (
-      <main className="app wrapper">
+      <main className="container-fluid">
         <Switch>
           <Route exact path="/" component={LogIn} />
           <Route path="/signup" component={SignUp} />
