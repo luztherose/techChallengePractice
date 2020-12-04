@@ -48,20 +48,26 @@ class Longin extends Component {
         // }
         // }
         return (
-            <div className="formContainer">
-                <h1>Sign In</h1>
-                <form method="post" action="/login"  onSubmit={this.handleSubmit} >
-                    <label>Email Address </label>
-                    <input type="email" name="userEmail" placeholder="johnsmith@gmail.com" onChange={this.handleChange} required ></input>
-                    <label>Password </label>
-                    <input type="password" name="password" onChange={this.handleChange}  required ></input>
-                    <input type="submit" value="Sign In!" ></input>
-                </form>
-                <div>
-                    <p>Please Sign Up!</p>
-                    <ul>
-                        <li><Link to="/signup">Sign up</Link></li>
-                    </ul>
+            <div>
+                <div className="container">
+                    <div className="row justify-content-center">
+                        <h1>Sign In</h1>
+                    </div>
+                    <div>
+                        <form method="post" action="/login" onSubmit={this.handleSubmit} >
+                            <label>Email Address </label>
+                            <input type="email" name="userEmail" placeholder="johnsmith@gmail.com" onChange={this.handleChange} required ></input>
+                            <label>Password </label>
+                            <input type="password" name="password" onChange={this.handleChange} required ></input>
+                            <input type="submit" value="Sign In!" ></input>
+                        </form>
+                    </div>
+                    <div className="row justify-content-center">
+                        <p>Please Sign Up!</p>
+                        <ul>
+                            <li><Link to="/signup">Sign up</Link></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         );

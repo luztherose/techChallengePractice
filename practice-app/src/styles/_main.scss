@@ -1,13 +1,9 @@
 html {
     font-size: 125%;
 }
-
 body {
     background: $bodyColor;
     color: $primaryColor;
-}
-.formContainer {
-    padding: 50px;
 }
 form {
     margin: 0 auto;
@@ -32,7 +28,6 @@ input[type=email], input[type=password] {
 ::placeholder {
     font-size: 14px;
 }
-
 .userContainer {
     display: flex;
     justify-content: space-around;
@@ -46,19 +41,15 @@ input[type=email], input[type=password] {
     text-align: end;
     padding: 10px;
 }
-.centerElements {
-    margin: 0 auto;
-}
-.alignLeft {
-    text-align: left;
+ul {
+    padding-left: 10px;
+    li {
+        list-style: none;
+    }
 }
 .marginLeft {
     margin-left:-1.7em ;
 }
-/////////////////////////////////////////////////////////////////////
-// Boostrap Classes
-/////////////////////////////////////////////////////////////////////
-.row {
+.centerContent {
     text-align: center;
-    padding-bottom: 0.5em;
 }

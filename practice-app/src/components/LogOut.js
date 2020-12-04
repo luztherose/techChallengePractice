@@ -12,9 +12,15 @@ class LogOut extends Component {
 
     render() {
         return(
-            <div>
-                <h1>Log Out Page</h1>
-                <button onClick={this.handleLogOut}>Sing out</button>
+            <div className="container ">
+                <div>
+                    <div className="row justify-content-center ">
+                        <h1>Log Out Page</h1>
+                    </div>
+                    <div className="row justify-content-center">
+                        <button onClick={this.handleLogOut}>Sing out</button>
+                    </div>
+                </div>
             </div>
         );
     }

@@ -62,35 +62,35 @@ class Users extends Component {
 
     render() {
         return (
-            <div>
+            <div >
                 <div className="linkToLogout">
                     <ul>
                         <li><Link to="/logout">Log out</Link></li>
                     </ul>
                 </div>
                 <div class="container">
-                    <div class="row">
-                        <h1 className="centerElements">List of Users</h1>
+                    <div class="row justify-content-center">
+                        <h1>List of Users</h1>
                     </div>
                     <div class="row">
-                        <div class="col-sm alignLeft ">
+                        <div class="col-sm">
                             <h2>Ids</h2>
                         </div>
-                        <div class="col-sm alignLeft">
+                        <div class="col-sm">
                             <h2 className="marginLeft">Emails</h2>
                         </div>
                     </div>
                 </div>
                 {this.state.users.map(item => {
                     return (
-                        <div className="row" key={item._id}>
-                            <div class="col-sm">
+                        <div className="row centerContent" key={item._id}>
+                            <div class="col-sm ">
                                 <p>{item._id}</p>
                             </div>
-                            <div class="col-sm">
+                            <div class="col-sm ">
                                 <p>{item.username}</p>
                             </div>
-                            <div class="col-sm">
+                            <div class="col-sm ">
                                 <button onClick={() => this.handleConfirmDelete(item._id)
                                 }>X</button>
                             </div>
