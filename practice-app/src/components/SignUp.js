@@ -37,15 +37,15 @@ class SignUp extends Component {
         return(
             <div className="formContainer">
                 <h1>Sign Up</h1>
-                <form method="post" action="/register">
+                <form method="post" action="/register" onSubmit={ this.handleSubmit }>
                     <div>
                         <label>Email </label>
-                        <input type="email" name="username" onChange={this.handleChange}></input>
+                        <input type="email" name="username" onChange={this.handleChange} required ></input>
                         <label>Password </label>
-                        <input type="password" name="password" onChange={this.handleChange}></input>
+                        <input type="password" name="password" onChange={this.handleChange} required ></input>
                     </div>
                     <div>
-                        <input type="submit" value="Register" onClick={this.handleSubmit} ></input>
+                        <input type="submit" value="Register"></input>
                     </div>
                 </form>
             </div>
