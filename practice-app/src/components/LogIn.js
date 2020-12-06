@@ -34,19 +34,6 @@ class Longin extends Component {
     }
 
     render() {
-        // return (
-        //     <AuthConsumer>
-        //         {
-        //             auth => {
-        // console.log(logout())
-        // console.log(typeof(getAuthToken()) )
-        // console.log(getAuthToken() !== null)
-        // debugger
-        if (isUserLogged()) {
-            this.props.history.push("/users");
-        }
-        // }
-        // }
         return (
             <div>
                 <div className="container">
@@ -71,8 +58,6 @@ class Longin extends Component {
                 </div>
             </div>
         );
-        {/* </AuthConsumer>
-        ) */}
     }
 }
 export default Longin; 

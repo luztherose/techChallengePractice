@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import Logout from "./LogOut";
 import { isUserLogged, getAuthToken } from "./Context/authContext";
 
@@ -28,11 +28,7 @@ class Users extends Component {
         });
     }
     componentDidMount() {
-        if (!isUserLogged()) {
-            this.props.history.push("/");
-        } else {
             this.fetchUsers();
-        }
     }
 
     handleConfirmDelete = (id) => {
@@ -68,15 +64,15 @@ class Users extends Component {
                         <li><Link to="/logout">Log out</Link></li>
                     </ul>
                 </div>
-                <div class="container">
-                    <div class="row justify-content-center">
+                <div className="container">
+                    <div className="row justify-content-center">
                         <h1>List of Users</h1>
                     </div>
-                    <div class="row">
-                        <div class="col-sm">
+                    <div className="row">
+                        <div className="col-sm">
                             <h2>Ids</h2>
                         </div>
-                        <div class="col-sm">
+                        <div className="col-sm">
                             <h2 className="marginLeft">Emails</h2>
                         </div>
                     </div>
@@ -84,13 +80,13 @@ class Users extends Component {
                 {this.state.users.map(item => {
                     return (
                         <div className="row centerContent" key={item._id}>
-                            <div class="col-sm ">
+                            <div className="col-sm ">
                                 <p>{item._id}</p>
                             </div>
-                            <div class="col-sm ">
+                            <div className="col-sm ">
                                 <p>{item.username}</p>
                             </div>
-                            <div class="col-sm ">
+                            <div className="col-sm ">
                                 <button onClick={() => this.handleConfirmDelete(item._id)
                                 }>X</button>
                             </div>
