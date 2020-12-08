@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { isUserLogged, setAuthToken, getAuthToken, logout } from "./Context/authContext";
+import {  setAuthToken } from "./Context/authContext";
 
 class Longin extends Component {
     state = {
