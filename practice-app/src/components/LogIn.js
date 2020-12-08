@@ -5,12 +5,15 @@ import { isUserLogged, setAuthToken, getAuthToken, logout } from "./Context/auth
 
 class Longin extends Component {
     state = {
-        username: '',
-        password: ''
+        user: {
+            username: '',
+            password: ''
+        },
+        errorMessage: ""
     }
 
     handleChange = (event) => {
-        const user = this.state;
+        const user = this.state.user;
         const credentials = event.target.name;
         if (credentials === "userEmail") {
             user.username = event.target.value;
@@ -18,17 +21,29 @@ class Longin extends Component {
             user.password = event.target.value;
         }
 
-        this.setState(user);
+        const state = this.state
+        state.user = user
+        this.setState(state);
+    }
+
+    getErrorMessageClass = () => {
+        if (this.state.errorMessage) {
+            return "alert alert-danger visible mt-3 text-center"
+        } else {
+            return "alert alert-danger invisible"
+        }
+
     }
 
     handleSubmit = (event) => {
         event.preventDefault();
-
-        axios.post(`http://51.38.51.187:3333/api/v1/auth/login`, this.state).then(res => {
+        axios.post(`http://51.38.51.187:3333/api/v1/auth/login`, this.state.user).then(res => {
             setAuthToken(res.data.accessToken);
             this.props.history.push("/users");
         }).catch(error => {
-            alert(error.response.data.message);
+            const state = this.state
+            state.errorMessage = error.response.data.message
+            this.setState(state);
             console.log(error);
         })
     }
@@ -37,6 +52,9 @@ class Longin extends Component {
         return (
             <div>
                 <div className="container">
+                    <div className={this.getErrorMessageClass()} role="alert">
+                        {this.state.errorMessage}
+                    </div>
                     <div className="row justify-content-center">
                         <h1>Sign In</h1>
                     </div>
