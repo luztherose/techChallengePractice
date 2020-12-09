@@ -4,32 +4,44 @@ import axios from 'axios';
 
 class SignUp extends Component {
     state = {
-        username: '',
-        password: ''
+        user: {
+            username: '',
+            password: ''
+        },
+        errorMessage: ""
     }
 
     handleChange = event => {
 
-        const user = this.state
+        const user = this.state.user
         if (event.target.name === "username") {
             user.username = event.target.value
         } else if (event.target.name === "password") {
             user.password = event.target.value
         }
-        this.setState(user);
+        const state = this.state
+        state.user = user
+        this.setState(state);
+    }
+
+    getErrorMessageClass = () => {
+        if (this.state.errorMessage) {
+            return "alert alert-danger visible mt-3 text-center"
+        } else {
+            return "alert alert-danger invisible"
+        }
     }
 
     handleSubmit = event => {
         event.preventDefault();
-        const user = this.state;
-        axios.post(`http://51.38.51.187:3333/api/v1/auth/register`, user)
-            .then(res => {
+        axios.post(`http://51.38.51.187:3333/api/v1/auth/register`,  this.state.user).then(res => {
                 // handle success
-                alert("Sign up successful!");
                 this.props.history.push("/")
-            }).catch(function (error) {
-                alert(error.response.data.message);
-                console.error(error);
+            }).catch(error => {
+                const state = this.state;
+                state.errorMessage = error.response.data.message
+                this.setState(state);
+                console.log(error);
             });
     }
 
@@ -37,6 +49,9 @@ class SignUp extends Component {
         return (
             <div>
                 <div className="container">
+                    <div className={ this.getErrorMessageClass() } role="alert">
+                        {this.state.errorMessage}
+                    </div>
                     <div className="row justify-content-center">
                         <h1>Sign Up</h1>
                     </div>
