@@ -57,14 +57,16 @@ class SignUp extends Component {
                     </div>
                     <div>
                         <form method="post" action="/register" onSubmit={this.handleSubmit}>
-                            <div>
+                            <div className="form-group">
                                 <label>Email </label>
-                                <input type="email" name="username" onChange={this.handleChange} required ></input>
+                                <input className="form-control" type="email" name="username" onChange={this.handleChange} required ></input>
+                            </div>
+                            <div className="form-group">
                                 <label>Password </label>
-                                <input type="password" name="password" onChange={this.handleChange} required ></input>
+                                <input className="form-control" type="password" name="password" onChange={this.handleChange} required ></input>
                             </div>
                             <div>
-                                <input type="submit" value="Register"></input>
+                                <input className="btn btn-primary" type="submit" value="Register"></input>
                             </div>
                         </form>
                     </div>

@@ -60,11 +60,15 @@ class Longin extends Component {
                     </div>
                     <div>
                         <form method="post" action="/login" onSubmit={this.handleSubmit} >
-                            <label>Email Address </label>
-                            <input type="email" name="userEmail" placeholder="johnsmith@gmail.com" onChange={this.handleChange} required ></input>
-                            <label>Password </label>
-                            <input type="password" name="password" onChange={this.handleChange} required ></input>
-                            <input type="submit" value="Sign In!" ></input>
+                            <div className="form-group">
+                                <label>Email Address </label>
+                                <input className="form-control" type="email" name="userEmail" placeholder="johnsmith@gmail.com" onChange={this.handleChange} required ></input>
+                            </div>
+                            <div className="form-group">
+                                <label>Password </label>
+                                <input className="form-control" type="password" name="password" onChange={this.handleChange} required ></input>
+                            </div>
+                            <input className="btn btn-primary" type="submit" value="Sign In!" ></input>
                         </form>
                     </div>
                     <div className="row justify-content-center">
