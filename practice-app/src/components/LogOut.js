@@ -15,10 +15,10 @@ class LogOut extends Component {
             <div className="container ">
                 <div>
                     <div className="row justify-content-center ">
-                        <h1>Log Out Page</h1>
+                        <h1 className="mt-5 mb-4">Log Out Page</h1>
                     </div>
                     <div className="row justify-content-center">
-                        <button onClick={this.handleLogOut}>Sing out</button>
+                        <button className="btn btn-secondary btn-lg" onClick={this.handleLogOut}>Sing out</button>
                     </div>
                 </div>
             </div>

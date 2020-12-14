@@ -5,6 +5,11 @@ body {
     background: $bodyColor;
     color: $primaryColor;
 }
+.userHeading {
+    width: 100%;
+    text-align: center;
+    color: navy;
+}
 form {
     margin: 0 auto;
     border-radius: 5px;
@@ -47,9 +52,6 @@ ul {
     li {
         list-style: none;
     }
-}
-.marginLeft {
-    margin-left:-1.7em ;
 }
 .centerContent {
     text-align: center;

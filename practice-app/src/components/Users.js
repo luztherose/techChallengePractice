@@ -66,14 +66,14 @@ class Users extends Component {
                 </div>
                 <div className="container">
                     <div className="row justify-content-center">
-                        <h1>List of Users</h1>
+                        <h1 className="userHeading shadow p-3 mb-5 bg-white rounded">List of Users</h1>
                     </div>
                     <div className="row">
                         <div className="col-sm">
                             <h2>Ids</h2>
                         </div>
                         <div className="col-sm">
-                            <h2 className="marginLeft">Emails</h2>
+                            <h2 className="ml-n5">Emails</h2>
                         </div>
                     </div>
                 </div>
@@ -87,7 +87,7 @@ class Users extends Component {
                                 <p>{item.username}</p>
                             </div>
                             <div className="col-sm ">
-                                <button onClick={() => this.handleConfirmDelete(item._id)
+                                <button className="btn btn-outline-danger" onClick={() => this.handleConfirmDelete(item._id)
                                 }>X</button>
                             </div>
                         </div>
