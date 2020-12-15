@@ -9,8 +9,11 @@ import { isUserLogged, getAuthToken } from "./Context/authContext";
 class Users extends Component {
 
     state = {
-        "users": []
+        "users": [],
+        "usersPaged": []
     }
+
+
 
     async fetchUsers() {
         const token = getAuthToken();
@@ -22,13 +25,24 @@ class Users extends Component {
         axios.get('http://51.38.51.187:3333/api/v1/users',
             config
         ).then(res => {
-            this.setState({ "users": res.data })
+            this.state.users = res.data
+            this.setState(this.state);
+            this.showNextPage()
         }).catch(error => {
             console.log(error)
         });
     }
+
+    showNextPage() {
+        let usersDisplayed = this.state.usersPaged.length;
+        for (let i = usersDisplayed; i < usersDisplayed + 10; i++) {
+            this.state.usersPaged.push(this.state.users[i])
+        }
+        this.setState(this.state);
+    }
+
     componentDidMount() {
-            this.fetchUsers();
+        this.fetchUsers();
     }
 
     handleConfirmDelete = (id) => {
@@ -77,7 +91,8 @@ class Users extends Component {
                         </div>
                     </div>
                 </div>
-                {this.state.users.map(item => {
+
+                {this.state.usersPaged.map(item => {
                     return (
                         <div className="row centerContent" key={item._id}>
                             <div className="col-sm ">
@@ -94,6 +109,7 @@ class Users extends Component {
                     )
                 })
                 }
+                <button className="btn btn-success" onClick={() => this.showNextPage()}>Next</button>
             </div>
         );
     }
