@@ -27,7 +27,8 @@ class Users extends Component {
         ).then(res => {
             this.state.users = res.data
             this.setState(this.state);
-            this.showNextPage()
+
+            this.showNextPage();
         }).catch(error => {
             console.log(error)
         });
@@ -35,10 +36,12 @@ class Users extends Component {
 
     showNextPage() {
         let usersDisplayed = this.state.usersPaged.length;
+        this.state.usersPaged.splice(0, this.state.usersPaged.length);
         for (let i = usersDisplayed; i < usersDisplayed + 10; i++) {
             this.state.usersPaged.push(this.state.users[i])
         }
         this.setState(this.state);
+        
     }
 
     componentDidMount() {
@@ -109,7 +112,11 @@ class Users extends Component {
                     )
                 })
                 }
-                <button className="btn btn-success" onClick={() => this.showNextPage()}>Next</button>
+                <div className="d-flex justify-content-center mt-3 mb-5">
+                    <button className="btn btn-secondary mr-4">Previous</button>
+                    <button className="btn btn-success" onClick={() => this.showNextPage()}>Next</button>
+                </div>
+                
             </div>
         );
     }
