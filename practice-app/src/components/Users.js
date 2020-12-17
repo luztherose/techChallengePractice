@@ -12,7 +12,7 @@ class Users extends Component {
         "users": [],
         "usersPaged": []
     }
-
+    index = 0;
 
 
     async fetchUsers() {
@@ -35,13 +35,13 @@ class Users extends Component {
     }
 
     showNextPage() {
-        let usersDisplayed = this.state.usersPaged.length;
-        this.state.usersPaged.splice(0, this.state.usersPaged.length);
-        for (let i = usersDisplayed; i < usersDisplayed + 10; i++) {
-            this.state.usersPaged.push(this.state.users[i])
+        this.state.usersPaged = [];
+        for (let i = this.index; i < this.index + 10; i++) {
+            this.state.usersPaged.push(this.state.users[i]); 
         }
-        this.setState(this.state);
+        this.index += 10;
         
+        this.setState(this.state);
     }
 
     componentDidMount() {
