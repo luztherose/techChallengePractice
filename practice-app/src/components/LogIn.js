@@ -41,6 +41,7 @@ class Longin extends Component {
             setAuthToken(res.data.accessToken);
             this.props.history.push("/users");
         }).catch(error => {
+            debugger
             const state = this.state
             state.errorMessage = error.response.data.message
             this.setState(state);
