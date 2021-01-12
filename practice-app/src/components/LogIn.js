@@ -1,7 +1,6 @@
-import axios from "axios";
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import {  setAuthToken } from "./Context/authContext";
+import { getUserCredentials } from "./Context/authContext";
 
 class Longin extends Component {
     state = {
@@ -37,15 +36,8 @@ class Longin extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        axios.post(`http://51.38.51.187:3333/api/v1/auth/login`, this.state.user).then(res => {
-            setAuthToken(res.data.accessToken);
-            this.props.history.push("/users");
-        }).catch(error => {
-            const state = this.state
-            state.errorMessage = error.response.data.message
-            this.setState(state);
-            console.log(error);
-        })
+        getUserCredentials();
+        //this.props.history.push("/users");
     }
 
     render() {

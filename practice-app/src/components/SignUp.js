@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import axios from 'axios';
+import {  setUserCredentials } from "./Context/authContext";
+
 
 
 class SignUp extends Component {
@@ -34,15 +35,8 @@ class SignUp extends Component {
 
     handleSubmit = event => {
         event.preventDefault();
-        axios.post(`http://51.38.51.187:3333/api/v1/auth/register`,  this.state.user).then(res => {
-                // handle success
-                this.props.history.push("/")
-            }).catch(error => {
-                const state = this.state;
-                state.errorMessage = error.response.data.message
-                this.setState(state);
-                console.log(error);
-            });
+        setUserCredentials(this.state.user);
+        this.props.history.push("/")
     }
 
     render() {
