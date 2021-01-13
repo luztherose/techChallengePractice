@@ -36,8 +36,14 @@ class Longin extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        getUserCredentials();
-        //this.props.history.push("/users");
+        const {username, password} = {...this.state.user}
+        const credentials = JSON.parse(getUserCredentials());
+        ;
+        if(username === credentials.username && password === credentials.password) {
+            this.props.history.push("/users");
+            console.log("Yeah")
+        } 
+        
     }
 
     render() {
